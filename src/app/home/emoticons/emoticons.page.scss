@@ -1,0 +1,15 @@
+
+.caption {
+    margin-bottom: 1rem;
+    mat-tab-group {
+        width: 90%;
+        margin: 0 2rem;
+        .mat-tab-label{
+            max-width: 80px;
+        }
+        span{
+            cursor: pointer;
+            margin: 2px;
+        }
+    }
+}

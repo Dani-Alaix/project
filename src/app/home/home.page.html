@@ -1,0 +1,53 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <div fxLayout="row">
+        <ion-icon class="logo" color="primary" name="logo-linkedin"></ion-icon>
+        <ion-searchbar placeholder="Buscar"></ion-searchbar>
+      </div>
+  
+      <div fxLayout="row">
+        <a href=""><ion-icon name="home"></ion-icon> Inicio</a>
+        <a href=""><ion-icon name="people"></ion-icon>Mi red</a>
+        <a href=""><ion-icon name="bag-handle"></ion-icon>Empleos</a>
+        <a href=""><ion-icon name="notifications"></ion-icon>Notificaciones</a>
+        <a href="">
+          <ion-avatar>
+            <img src="https://picsum.photos/50" alt="">
+          </ion-avatar>
+          Yo       
+        </a>
+      </div>
+  
+      <div fxLayout="row">
+        <a href=""><ion-icon name="apps"></ion-icon>
+          Para negocios
+        </a>
+        <a href=""><ion-icon name="desktop-outline"></ion-icon>Learning</a>
+      </div>
+    </div>
+
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" scrollEvents="true">
+  
+  <div id="container">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <app-info></app-info>
+        </ion-col>
+        <ion-col size="6">
+          <app-post></app-post>
+        </ion-col>
+        <ion-col>
+          <app-people></app-people>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+</ion-content>

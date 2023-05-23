@@ -1,0 +1,29 @@
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Añadir a tu feed</ion-card-title>
+    </ion-card-header>
+    <ion-list>
+      <ion-item lines="none" *ngFor="let person of people">
+        <ion-avatar slot="start">
+          <img src={{person.profile}} alt="">
+        </ion-avatar>
+        <ion-label>
+          <span>{{person.name}}</span>
+          <p>{{person.description}}</p>
+          <ion-button fill="outline" shape="round" mode="ios" color="secondary"><ion-icon name="add"></ion-icon>
+            Seguir</ion-button>
+        </ion-label>        
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <div fxLayout="row" fxLayoutAlign="end center"><p>Anuncio</p> 
+        <ion-icon name="ellipsis-horizontal"></ion-icon>
+      </div>
+      
+    </ion-card-header>
+  </ion-card>
+</ion-content>

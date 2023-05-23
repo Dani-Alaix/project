@@ -1,0 +1,91 @@
+<form [formGroup]="postForm">
+  <ion-header [translucent]="true" class="ion-no-border">
+    <ion-toolbar>
+      <div fxLayout="row">
+        <ion-avatar>
+          <img src="https://picsum.photos/50" alt="">
+        </ion-avatar>
+        <ion-title>
+          <ion-item lines="none">
+            <ion-label position="floating" color="secondary">Nombre *</ion-label>
+            <ion-input formControlName="nameUser" placeholder="Nombre o usuario"> </ion-input>
+          </ion-item>
+        </ion-title>
+      </div>
+      <ion-buttons slot="end">
+        <ion-button (click)="back()">
+          <ion-icon name="close"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item lines="none">
+    <ion-textarea autoGrow="true" formControlName="caption" placeholder="¿Sobre qué quieres hablar?"> </ion-textarea>
+  </ion-item>
+
+  <ion-buttons>
+    <ion-button id="click-trigger" >
+      <ion-icon name="happy"></ion-icon>
+    </ion-button>
+  </ion-buttons>  
+  <ion-popover trigger="click-trigger" triggerAction="click" side="top" alignment="center">
+    <ng-template>
+      <app-emoticons (emoSelected)="emoSelected(caption , $event)"></app-emoticons>
+    </ng-template>
+  </ion-popover>
+
+
+  <ion-item lines="none">
+    <ion-label color="secondary">foto</ion-label>
+    <ion-input (change)="onChangeFiles($event)" type="file" accept=".jpg, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/*"
+      enctype="multipart/form-data"> </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <div fxLayout="row" class="fab-btn">
+      <ion-button class="btn-icon" shape="round">
+        <ion-icon name="image"></ion-icon>
+      </ion-button>
+      <ion-button class="btn-icon" shape="round">
+        <ion-icon name="videocam"></ion-icon>
+      </ion-button>
+      <ion-button class="btn-icon" shape="round">
+        <ion-icon name="calendar"></ion-icon>
+      </ion-button>
+      <div *ngIf="!more">
+        <ion-button class="btn-icon" shape="round" (click)="more=!more">
+          <ion-icon name="ellipsis-horizontal"></ion-icon>
+        </ion-button>
+      </div>
+      <div *ngIf="more">
+        <ion-button class="btn-icon" shape="round">
+          <ion-icon name="sunny"></ion-icon>
+        </ion-button>
+        <ion-button class="btn-icon" shape="round">
+          <ion-icon name="bag-handle"></ion-icon>
+        </ion-button>
+        <ion-button class="btn-icon" shape="round">
+          <ion-icon name="bar-chart"></ion-icon>
+        </ion-button>
+        <ion-button class="btn-icon" shape="round">
+          <ion-icon name="document-text"></ion-icon>
+        </ion-button>
+        <ion-button class="btn-icon" shape="round">
+          <ion-icon name="id-card"></ion-icon>
+        </ion-button>
+      </div>
+  
+  
+    </div>
+  </ion-item>
+
+
+  <ion-item lines="none">
+    <ion-buttons slot="end">
+      <ion-button shape="round" mode="ios" (click)="sendPost()">Publicar</ion-button>
+    </ion-buttons>
+  </ion-item>
+  
+
+</form>

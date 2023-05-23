@@ -1,0 +1,8 @@
+{
+  "name": "ruido-1",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "db46e842"
+}

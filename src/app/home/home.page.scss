@@ -1,0 +1,70 @@
+@import "../../theme/variables.scss";
+@import "../../theme/breakpoints.scss";
+
+ion-header {
+  background-color: $white;
+  ion-toolbar {
+    max-width: 1128px; 
+    margin: 0 auto;
+    @include lg {
+        max-width: 960px;
+    }
+    @include md {
+        max-width: 720px;
+    }
+    @include sm {
+        max-width: 576px;
+    }
+    ion-searchbar {
+      --background: #EDF3F8;
+      width: 300px;
+      height: 36px;
+      --border-radius: 6px;
+      &:focus {
+        border: 1px solid #000;
+      }
+    } 
+    .logo {
+      font-size: 40px;
+      cursor: pointer;
+    }
+    a {
+      text-align: center;
+      font-size: 12px;
+      text-decoration: none;
+      color: $primary-text;
+      width: 80px;
+      height: 55px;
+      &:hover {
+        color: $select-icon;
+      }
+      &:active {
+        color: $select-icon;
+        border-bottom: 2px solid $select-icon;
+
+      }
+      ion-icon {
+        display: block;
+        font-size: 24px;
+        margin: 8px auto 0 auto;
+      }
+      ion-avatar {
+        height: 30px;
+        width: 30px;
+        display: block;
+        margin: 4px auto 0 auto;
+      }
+    }
+  }
+}
+
+ion-content{
+  background-color: $bg-main;
+  ion-col {
+    .scroll-y {
+      --overflow: hidden;
+      overflow: hidden;
+      overflow-y: hidden;
+    }
+  }
+}

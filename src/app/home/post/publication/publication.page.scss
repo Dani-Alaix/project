@@ -1,0 +1,29 @@
+@import "/src/theme/variables.scss";
+
+ion-toolbar {
+    --padding-bottom: 8px;
+    --padding-end: 8px;
+    --padding-start: 16px;
+    --padding-top: 16px;
+}
+
+.btn-icon {
+    --background: $bg-btn;
+    width: 60px;
+    height: 60px;
+    color: $icon;
+    --padding-start: 0px !important;
+    --padding-end: 0px !important;
+    margin: 4px;
+    &:hover{
+        --box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+}
+.fab-btn {
+    padding: 8px;
+}
+ion-textarea {
+    max-height: 250px;
+    height: 250px;
+    overflow-y: scroll;
+}
